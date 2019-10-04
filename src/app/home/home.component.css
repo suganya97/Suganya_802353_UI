@@ -1,0 +1,178 @@
+
+ a.nav-link {
+    font-family: Apercu,sans-serif;
+    font-size: 1rem;
+    font-weight: 200;
+    text-transform: none;
+ } 
+ 
+navbar {
+  padding: 30px 0;
+  height: 92px;
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  transition: all 0.5s;
+  z-index: 997;
+}
+
+
+ a.navbar-brand
+ {
+    font-family: Apercu,sans-serif;
+    font-size: 2rem;
+    font-weight: bolder;
+    text-transform: none;
+    color: whitesmoke;
+    text-shadow: 2px 2px 4px #000000;
+ }
+ .navbar-light .navbar-nav .nav-link {
+    color: whitesmoke;
+}
+ .bg-img {
+   background-image: url("../../assets/img/home1.jpg");
+   min-height: 700px;
+   background-position: center;
+   background-repeat: no-repeat;
+   background-size: cover;
+   position: relative;
+ }
+
+ 
+#header.header-scrolled {
+  background: rgba(0, 0, 0, 0.9);
+  padding: 20px 0;
+  height: 72px;
+  transition: all 0.5s;
+}
+
+
+
+/*
+ ============================== Information =======================
+*/
+
+ #information {
+        width: auto;
+        background-color: black;
+    }
+  
+  #information i {
+    color: #18d26e;
+    font-size: 48px;
+    display: inline-block;
+    line-height: 1;
+  }
+  
+  #information h4 a:hover{
+    color: #18d26e;
+  }
+  
+  #information h4 a {
+    color: #fff;
+  } 
+  
+  
+/*
+ ============================== Information =======================
+*/
+  #about {
+    background: url("../../assets/img/about-bg.jpg") center top no-repeat fixed;
+    background-size: cover;
+    padding: 60px 0 40px 0;
+    position: relative;
+    opacity: 0.4;
+  }
+  #about-cols 
+  {
+      opacity: 0;
+  }
+
+ /* img.rounded:hover
+ {
+     width: 91%;
+ } */
+ h1{
+     font-size: 2.60rem;
+     color:whitesmoke;
+     text-shadow: 4px 4px 6px #000000;
+    font-weight: 900;
+    line-height: 2.2;
+ }
+ h2{
+    font-size: 2.90rem;
+    font-weight: 800;
+    line-height: 2.2;
+}
+li
+{
+    list-style-type: none;
+    text-align: left;
+    font-size: 1rem;
+}
+h3{ 
+    font-size: 2.80rem;
+    font-weight:700;
+    line-height: 2.2;
+}
+ .bgtext
+ {
+     margin-top:200px;
+ }
+.text-muted
+{
+    font-size:1.5rem;
+}
+
+.btn {
+    -webkit-transition: all .25s ease;
+    transition: all .25s ease;
+    cursor: pointer;
+    padding: 7px 36px;
+    font-size: 16px;
+    line-height: 24px;
+    border-radius: 24px;
+}
+.btn, strong {
+    font-weight: 500;
+}
+
+.parallax {
+    background-image: url("../../assets/img/training.jpg");
+    min-height: 500px; 
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+ @media only screen and (max-width: 600px) {
+  
+    a.nav-link {
+        font-family: Apercu,sans-serif;
+        font-size: 1rem;
+        font-weight: 50;
+        text-transform: none;
+        color: whitesmoke;
+     } 
+     a.navbar-brand
+     {
+        font-family: Apercu,sans-serif;
+        font-size: 1.5rem;
+        font-weight: 100;
+        text-transform: none;
+        color: whitesmoke;
+     }
+     h1{
+        font-size: 1.80rem;
+        font-weight: 600;
+        line-height: 1.2;
+    }
+    h2{
+        font-size: 1.75rem;
+        font-weight: 500;
+        line-height: 1.2;
+        }
+  }
+  
