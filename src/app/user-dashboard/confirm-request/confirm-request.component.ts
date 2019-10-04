@@ -70,7 +70,7 @@ export class ConfirmRequestComponent implements OnInit {
       endDate: this.endDate,
       fees: this.skillData.fees,
       skillId:this.skillData.id,
-      skillName : this.skillData.name,
+      skillname : this.skillData.name,
       userId: 1,
       userName:this.yourName,
       trainerId:this.paramId,

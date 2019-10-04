@@ -1,0 +1,28 @@
+
+<div class="container-fluid py-5">
+    <div class="row py-5">
+        <div class="col-sm-6">
+                <div class="card">
+                        <div class="card-header">
+                          Pending/Rejected
+                        </div>
+                        <ul class="list-group list-group-flush">
+                          <li *ngFor="let i of acceptedTrainings" class="list-group-item"> 
+                              <p>You opted for {{i.skillname}} from {{i.startDate}} to {{i.endDate}} on time {{i.timeSlot}} </p></li>
+                        </ul>
+                      </div>
+        </div>
+        <div class="col-sm-6">
+                <div class="card">
+                        <div class="card-header">
+                          Featured
+                        </div>
+                        <ul class="list-group list-group-flush">
+                          <li class="list-group-item">Cras justo odio</li>
+                          <li class="list-group-item">Dapibus ac facilisis in</li>
+                          <li class="list-group-item">Vestibulum at eros</li>
+                        </ul>
+                      </div>
+        </div>
+    </div>
+</div>

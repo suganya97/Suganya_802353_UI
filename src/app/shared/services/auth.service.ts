@@ -29,6 +29,12 @@ export class AuthService {
     return this.http.get('https://localhost:44307/api/getSearchData?trainerTechnology='+data);
   }
 
+  public getAllTrainings()
+  {
+    console.log("inside service");
+    return this.http.get('https://localhost:44307/api/allTrainingDetails');
+  }
+
   public trainingDetails(data)
   {
     console.log(data);

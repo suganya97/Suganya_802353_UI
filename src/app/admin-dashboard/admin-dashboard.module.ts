@@ -11,7 +11,7 @@ import { FooterComponent } from '../footer/footer.component';
   declarations: [
    AdminDashboardComponent,
    NavbarComponent,
-   FooterComponent
+   FooterComponent,
   ],
   imports: [CommonModule, AdminDashboardRoutingModule]
 })
