@@ -1,7 +1,7 @@
 <div class="container p-2">
     <div class="py-4 text-center">
         <h2>Payment</h2>
-        <button type="button" class="float-right btn btn-success btn-sm">Back</button>
+        <button type="button" class="float-right btn btn-success btn-sm"><a routerLink="user-dashboard/confirm-request"> Back</a></button>
     </div>
 
     <div class="row">
@@ -28,7 +28,7 @@
         </div>
         <div class="col-md-8 order-md-1">
             <h4 class="mb-3">Billing Details</h4>
-            <form class="needs-validation" novalidate>
+            <form class="needs-validation">
 
                 <div class="d-block my-3">
                     <div class="custom-control custom-radio">
@@ -73,7 +73,7 @@
                     </div>
                 </div>
                 <hr class="mb-4">
-                <button class="btn btn-primary btn-lg btn-block" type="submit">Purchase</button>
+                <button class="btn btn-primary btn-lg btn-block" (click)="savePayment()" type="submit">Purchase</button>
 
                 <hr class="mb-4">
 

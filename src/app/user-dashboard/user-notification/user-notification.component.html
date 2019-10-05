@@ -6,7 +6,7 @@
           Pending
         </div>
         <ul *ngFor="let i of pendingRequest" class="list-group list-group-flush">
-          <li  class="list-group-item">
+          <li class="list-group-item">
             <p *ngIf="( i.accept == false) && (i.rejectNotify == false)">You opted for {{i.skillname}} under
               {{i.mentorName}} from {{i.startDate  | date: 'dd/MM/yyyy' }} to
               {{i.endDate  | date: 'dd/MM/yyyy'}} on time {{i.timeSlot}} </p>
@@ -20,14 +20,19 @@
           Accepted
         </div>
         <ul *ngFor="let i of acceptedTrainings" class="list-group list-group-flush">
-          <li  class="list-group-item">
+          <li class="list-group-item">
             <p *ngIf="( i.accept == true) && (i.rejectNotify == false)">You requested for {{i.skillname}} under
               {{i.mentorName}} from {{i.startDate  | date: 'dd/MM/yyyy' }} to
               {{i.endDate  | date: 'dd/MM/yyyy'}} on time {{i.timeSlot}} </p>
+              <button *ngIf="i.trainingPaymentStatus == true"  type="button" class="float-left btn btn-sm btn-primary" (click)="startTraining(i.id)" >Start Training</button>
+     
+              <button *ngIf="i.trainingPaymentStatus == false"   type="button" class="float-right btn btn-sm btn-primary" (click)="payment(i.id)">Payment</button>
           </li>
-          <li class="list-group-item">
-            <button type="button" class="btn btn-sm btn-primary" (click)="payment(i.id)">Payment</button>
-          </li>
+          <!-- <li *ngFor="let j of paymentData" class="list-group-item">
+            <ul *ngIf="(j.paymentStatus == false)">
+              <button type="button" class="btn btn-sm btn-primary" (click)="payment(i.id)">Payment</button>
+            </ul>
+          </li> -->
         </ul>
       </div>
     </div>
@@ -37,7 +42,7 @@
           Rejected Request
         </div>
         <ul *ngFor="let i of rejectedTrainings" class="list-group list-group-flush">
-          <li  class="list-group-item">
+          <li class="list-group-item">
             <p *ngIf="( i.rejectNotify == true) && (i.accept == false)">You opted for {{i.skillname}} under
               {{i.mentorName}} from {{i.startDate  | date: 'dd/MM/yyyy' }} to {{i.endDate  | date: 'dd/MM/yyyy'}}
               on time {{i.timeSlot}} </p>

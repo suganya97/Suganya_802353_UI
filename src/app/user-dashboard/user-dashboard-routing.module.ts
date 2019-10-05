@@ -16,7 +16,7 @@ const routes: Routes = [
       { path: 'profile', loadChildren: './profile/profile.module#ProfileModule' },
       { path: 'edit-profile/:id', loadChildren: './edit-profile/edit-profile.module#EditProfileModule' },
       { path: 'payment', loadChildren: './payment/payment.module#PaymentModule'},
-      { path: 'payment-information', loadChildren: './payment-info/payment-info.module#PaymentInfoModule'}
+      { path: 'payment-info', loadChildren: './payment-info/payment-info.module#PaymentInfoModule'}
     ]
 }
 ];

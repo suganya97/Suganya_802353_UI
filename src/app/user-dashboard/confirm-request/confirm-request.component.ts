@@ -84,7 +84,8 @@ export class ConfirmRequestComponent implements OnInit {
       mentorName: this.trainerData.userName,
       email: this.trainerData.email,
       accept: false,
-      rejectNotify:false
+      rejectNotify:false,
+      trainingPaymentStatus:false
     };
 
     console.log(" saving datra " + data);

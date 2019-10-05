@@ -14,6 +14,7 @@ export class PaymentComponent implements OnInit {
   paramtrainingId: number;
   userInfo: any;
   skillInfo: any;
+  savedPaymentSuccess: any;
 
   constructor(
     private auth: AuthService,
@@ -31,7 +32,6 @@ export class PaymentComponent implements OnInit {
     this.route.queryParams.subscribe(params => {
       let id = params["trainingId"];
       this.paramtrainingId = +id;
-      console.log(this.paramtrainingId);
       this.getTraining();
     });
   }
@@ -39,9 +39,7 @@ export class PaymentComponent implements OnInit {
   getTraining() {
     console.log("in status");
     this.auth.getTrainingById(this.paramtrainingId).subscribe(data => {
-      console.log(data);
       this.allPaymentData = data;
-
       // this.getById(this.allPaymentData.id);
       this.getSkillDetails(this.allPaymentData.skillId);
     });
@@ -56,25 +54,36 @@ export class PaymentComponent implements OnInit {
   getSkillDetails(id) {
     this.auth.getSkillById(id).subscribe(data => {
       this.skillInfo = data;
-      console.log(this.skillInfo);
     });
   }
 
-  savePayment(id) {
+  savePayment() {
+    console.log(this.allPaymentData);
+    console.log("===========");
+    console.log(this.skillInfo);
+
     let data = {
-      userId: this.skillInfo.userId,
-      trainerId: this.skillInfo.trainerId,
-      skillId: this.skillInfo.skillId,
+      userId: this.allPaymentData.userId,
+      trainerId: this.allPaymentData.mentorId,
+      skillId: this.skillInfo.id,
       fees: this.skillInfo.fees,
-      commision: this.skillInfo.userId,
-      skillName: this.skillInfo.skillName
+      skillName: this.allPaymentData.skillname,
+      trainingDetailsId: this.allPaymentData.id,
+      paymentStatus: true
     };
 
-    this.auth.savePayment(data).subscribe(data => {
-      console.log(data);
-    });
+    console.log("-=------ ");
+    console.log(data);
 
-    alert("click");
-    // this.router.navigateByUrl("/user-dashboard/receipt?id=" + id);
+    this.auth.savePayment(data).subscribe(data => {
+      this.savedPaymentSuccess = data;
+
+      console.log(this.savedPaymentSuccess);
+      console.log(this.savedPaymentSuccess);
+      let id = this.savedPaymentSuccess.trainingDetailsId;
+      this.auth.changeTrainingPaymentStatus(id).subscribe(data => {
+        this.router.navigate(["user-dashboard/payment-info"]);
+      });
+    });
   }
 }

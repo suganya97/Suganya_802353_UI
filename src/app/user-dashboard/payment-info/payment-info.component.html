@@ -1,118 +1,20 @@
-
-<div class="container p-2">
-
-        <div class="py-4 text-center">
-            <h2>User Receipt</h2>
-            <button type="button" class="float-right btn btn-success btn-sm" (click)="backToHome()">Back</button>
+<section class="my-2 container text-center">
+    <div class="row">
+        <div class="col-md-6 offset-md-3">
+            <h3 class="text-center text-capitalize p-4">Payment - Info</h3>
+            <table class="table text-center table-striped table-responsive">
+                <tbody id="myTable">
+                    <tr>
+                        <th>Techonolgy</th>
+                        <th>Fees</th>
+                    </tr>
+                    <tr *ngFor="let i of paymentSuccess">
+                        <td>{{i.skillName}}</td>
+                        <td>{{i.fees}}</td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
     </div>
-    <div class="container p-3">
-        <div class="card">
-            <div class="card-header">
-                <strong>Invoice</strong><br>
-                <strong>20/08/2019</strong>
-                <span class="float-right"> <strong>Status:</strong> Payment Done</span>
 
-            </div>
-            <div class="card-body">
-                <div class="row mb-4">
-                    <div class="col-sm-6">
-                        <h6 class="mb-3">From:</h6>
-                        <div>
-                            <strong>Ravishankar</strong>
-                        </div>
-                        <div>Thoraipakkam, Chennai</div>
-                        <div>Email: shankarravi@gmail.com</div>
-                        <div>Phone: +917878986753</div>
-                    </div>
-
-                    <div class="col-sm-6">
-                        <h6 class="mb-3">To:</h6>
-                        <div>
-                            <strong>Shivam Sharma</strong>
-                        </div>
-                        <div>Perungundi, Chennai</div>
-                        <div>Email: shivamsharma@gmail.com</div>
-                        <div>Phone: +91987654321</div>
-                    </div>
-
-
-
-                </div>
-
-                <div class="table-responsive-sm">
-                    <table class="table table-striped">
-                        <thead>
-                            <tr>
-                                <th class="center">#</th>
-                                <th>Course Name</th>
-                                <th>Course Price</th>
-                                <th class="right">Total</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td class="center">1</td>
-                                <td class="left strong">Java</td>
-                                <td class="left">Rs.12000</td>
-                                <td class="right">Rs.1200</td>
-                            </tr>
-                            <tr>
-                                <td class="center">2</td>
-                                <td class="left">Dot Net</td>
-                                <td class="left">Rs.12000</td>
-                                <td class="right">Rs.12000</td>
-                            </tr>
-                            <tr>
-                                <td class="center">3</td>
-                                <td class="left">Mean Stack</td>
-                                <td class="left">Rs.7000</td>
-                                <td class="right">Rs.7000</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-                <div class="row">
-                    <div class="col-lg-4 col-sm-5">
-
-                    </div>
-
-                    <div class="col-lg-4 col-sm-5 ml-auto">
-                        <table class="table table-clear">
-                            <tbody>
-                                <tr>
-                                    <td class="left">
-                                        <strong>Subtotal</strong>
-                                    </td>
-                                    <td class="right">Rs.30,000</td>
-                                </tr>
-                                <tr>
-                                    <td class="left">
-                                        <strong>Promocode Discount</strong>
-                                    </td>
-                                    <td class="right">Rs.4000</td>
-                                </tr>
-                                <tr>
-                                    <td class="left">
-                                        <strong>Tax</strong>
-                                    </td>
-                                    <td class="right">Rs.1000</td>
-                                </tr>
-                                <tr>
-                                    <td class="left">
-                                        <strong>Total</strong>
-                                    </td>
-                                    <td class="right">
-                                        <strong>Rs.26,000</strong>
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
-
-                    </div>
-
-                </div>
-
-            </div>
-        </div>
-    </div>
+</section>
