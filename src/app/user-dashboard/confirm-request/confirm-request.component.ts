@@ -15,7 +15,8 @@ export class ConfirmRequestComponent implements OnInit {
   trainerData: any;
   skillData: any;
   skill: any;
-  showRequestedCourse;any;
+  showRequestedCourse;
+  any;
 
   timeSlot: string;
   startDate: Date;
@@ -25,30 +26,36 @@ export class ConfirmRequestComponent implements OnInit {
   name: string;
   fees: string;
   prerequisites: string;
-  yourName:string;
-  request:Boolean;
-  requestSent:any;
-
+  yourName: string;
+  request: Boolean;
+  requestSent: any;
+  lid: any;
   constructor(private route: ActivatedRoute, private auth: AuthService) {}
 
   ngOnInit() {
     this.getParamData();
     this.getById();
     this.getTech();
+    let localid = localStorage.getItem("lid");
+
+    this.lid = +localid;
+    console.log(this.lid);
   }
 
   getParamData() {
     this.route.queryParams.subscribe(params => {
-      this.paramId = params["id"];
+      let pid = params["id"];
+      this.paramId = +pid;
       this.trainerTechnology = params["trainerTechnology"];
-      console.log(this.paramId + "  " + this.trainerTechnology);
+      console.log("param id " + this.paramId);
     });
   }
 
   getById() {
     this.auth.getUserById(this.paramId).subscribe(data => {
       this.trainerData = data;
-      console.log(this.trainerData);
+      console.log("trainber data " );
+      console.log( this.trainerData);
     });
   }
 
@@ -59,7 +66,7 @@ export class ConfirmRequestComponent implements OnInit {
         name: this.trainerTechnology
       });
 
-      console.log(this.skillData.id);
+      console.log("skil id " + this.skillData.id);
     });
   }
 
@@ -69,20 +76,20 @@ export class ConfirmRequestComponent implements OnInit {
       startDate: this.startDate,
       endDate: this.endDate,
       fees: this.skillData.fees,
-      skillId:this.skillData.id,
-      skillname : this.skillData.name,
-      userId: 1,
-      userName:this.yourName,
-      trainerId:this.paramId,
+      skillId: this.skillData.id,
+      skillname: this.skillData.name,
+      userId: this.lid,
+      userName: this.yourName,
+      mentorId: this.trainerData.id,
       mentorName: this.trainerData.userName,
       email: this.trainerData.email,
-      accept:false
+      accept: false,
+      rejectNotify:false
     };
 
-    this.auth.trainingDetails(data).subscribe(data=>
-    {
-        alert("request sent");
+    console.log(" saving datra " + data);
+    this.auth.trainingDetails(data).subscribe(data => {
+      alert("request sent");
     });
-
   }
 }

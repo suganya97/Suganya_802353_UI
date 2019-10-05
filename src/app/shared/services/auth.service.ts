@@ -25,9 +25,23 @@ export class AuthService {
     return this.http.get('https://localhost:44307/api/user/'+id);
   }
 
-
   public searchTrainings(data) {
     return this.http.get('https://localhost:44307/api/getSearchData?trainerTechnology='+data);
+  }
+
+   
+  public getTrainingById(id) {
+    return this.http.get('https://localhost:44307/api/training/'+id);
+  }
+
+  public getTechno()
+  { 
+    return this.http.get('https://localhost:44307/api/getTech');
+  }
+
+  public getSkillById(id)
+  {
+    return this.http.get('https://localhost:44307/api/skill/'+id);
   }
 
   public getAllTrainings()
@@ -48,6 +62,21 @@ export class AuthService {
       .pipe(map(data1 => (data1 = JSON.parse(JSON.stringify(data1)))));
   }
 
+ 
+
+
+  public savePayment(data)
+  {
+    console.log(data);
+    return this.http
+      .post(
+        'https://localhost:44307/api/savePayment',
+        data,
+        httpOptions
+      )
+      .pipe(map(data1 => (data1 = JSON.parse(JSON.stringify(data1)))));
+  }
+
   public registerUser(regData) {
     return this.http
       .post(
@@ -59,10 +88,6 @@ export class AuthService {
   }
 
   
-  public getTechno()
-  { 
-    return this.http.get('https://localhost:44307/api/getTech');
-  }
 
 
   public removingTechnology(id)

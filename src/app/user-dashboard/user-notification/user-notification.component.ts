@@ -12,12 +12,17 @@ export class UserNotificationComponent implements OnInit {
   allData: any;
   rejectedTrainings:any;
   pendingRequest:any;
+  lid:any;
 
   constructor(private auth: AuthService,public router:Router) {}
 
   ngOnInit() {
     console.log("in ng");
     this.getRequestStatus();
+    let localid = localStorage.getItem('lid');
+
+    this.lid = +localid;
+    console.log(this.lid);
   }
 
   getRequestStatus() {
@@ -25,18 +30,23 @@ export class UserNotificationComponent implements OnInit {
     this.auth.getAllTrainings().subscribe(data => {
    console.log(data);
       this.allData = data;
-      this.pendingRequest = _.where(this.allData,{rejectNotify:false,accept:false,userId : 1});
-      
-      this.acceptedTrainings = _.where(this.allData,{rejectNotify:false,accept:true,userId : 1});
+      this.pendingRequest = _.where(this.allData,{rejectNotify:false,accept:false,userId : this.lid});
+      console.log(this.pendingRequest);
+      this.acceptedTrainings = _.where(this.allData,{rejectNotify:false,accept:true,userId : this.lid});
       console.log(this.acceptedTrainings);
-      this.rejectedTrainings = _.where(this.allData,{rejectNotify:true,accept:false,userId:1 });
-     
+      this.rejectedTrainings = _.where(this.allData,{rejectNotify:true,accept:false,userId: this.lid});
+      console.log(this.rejectedTrainings);
     });
   }
 
   payment(id)
   {
+    let data={
+      trainingId :id
+    }
     alert("click");
-    this.router.navigateByUrl("/user-dashboard/payment");
+    this.router.navigate(["user-dashboard/payment"], {
+      queryParams: data
+    });
   }
 }
