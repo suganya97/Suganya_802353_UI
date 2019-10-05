@@ -14,6 +14,7 @@ export class AuthService {
 
   constructor(private http : HttpClient) { }
 
+
  
   public getAllRegisteredUsersType() {
     return this.http.get('https://localhost:44307/api/getAll');
@@ -67,6 +68,18 @@ export class AuthService {
   public removingTechnology(id)
   {
     return this.http.delete('https://localhost:44307/api/DeleteSkillById/'+id,httpOptions)
+    .pipe(map(data1 => (data1 = JSON.parse(JSON.stringify(data1)))));
+  }
+
+  public acceptStatus(id)
+  {
+    return this.http.put('https://localhost:44307/api/acceptStatus/'+id,httpOptions)
+    .pipe(map(data1 => (data1 = JSON.parse(JSON.stringify(data1)))));
+  }
+
+  public rejectStatus(id)
+  {
+    return this.http.put('https://localhost:44307/api/rejectStatus/'+id,httpOptions)
     .pipe(map(data1 => (data1 = JSON.parse(JSON.stringify(data1)))));
   }
 

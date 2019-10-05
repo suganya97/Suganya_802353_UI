@@ -15,3 +15,5 @@ import { TrainerNotificationComponent } from './trainer-notification.component';
   ]
 })
 export class TrainerNotificationModule { }
+
+

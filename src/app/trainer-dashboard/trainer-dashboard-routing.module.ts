@@ -7,6 +7,8 @@ const routes: Routes = [
   children: [
     { path: 'tdashboard', loadChildren: './tdashboard/tdashboard.module#TdashboardModule' },
     { path: 'trainer-completed-trainings', loadChildren: './trainer-completed-trainings/trainer-completed-trainings.module#TrainerCompletedTrainingsModule' },
+    { path: 'trainer-notification',loadChildren:'./trainer-notification/trainer-notification.module#TrainerNotificationModule'},
+   
     { path: 'trainer-current-trainings', loadChildren: './trainer-current-trainings/trainer-current-trainings.module#TrainerCurrentTrainingsModule' },
     { path: 'trainer-profile', loadChildren: './trainer-profile/trainer-profile.module#TrainerProfileModule' },
     { path: 'trainer-edit-profile/:id', loadChildren: './trainer-edit-profile/trainer-edit-profile.module#TrainerEditProfileModule' },
