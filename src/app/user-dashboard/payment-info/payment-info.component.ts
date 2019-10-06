@@ -11,7 +11,6 @@ export class PaymentInfoComponent implements OnInit {
   paymentSuccess: any;
   paymentFoundData : any;
   lid: number;
-  l;
   constructor(private auth: AuthService) {}
 
   ngOnInit() {

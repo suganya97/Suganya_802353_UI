@@ -5,8 +5,6 @@ import { AdminDashboardComponent } from "./admin-dashboard.component";
 const routes: Routes = [
   { path: '', component: AdminDashboardComponent,
     children: [
-
-      {path:'',redirectTo:'dashboard',  pathMatch: 'prefix' },
       { path: 'dashboard', loadChildren: './adashboard/adashboard.module#AdashboardModule' },
       { path: 'add-block-user-mentor', loadChildren: './add-block/add-block.module#AddBlockModule'},
       { path: 'add-remove-technology', loadChildren: './add-remove/add-remove.module#AddRemoveModule'},

@@ -24,8 +24,9 @@
             <p *ngIf="( i.accept == true) && (i.rejectNotify == false)">You requested for {{i.skillname}} under
               {{i.mentorName}} from {{i.startDate  | date: 'dd/MM/yyyy' }} to
               {{i.endDate  | date: 'dd/MM/yyyy'}} on time {{i.timeSlot}} </p>
-              <button *ngIf="i.trainingPaymentStatus == true"  type="button" class="float-left btn btn-sm btn-primary" (click)="startTraining(i.id)" >Start Training</button>
-     
+              <button *ngIf="i.trainingPaymentStatus == true && i.status != 'current'"  type="button" class="float-left btn btn-sm btn-primary" (click)="startTraining(i.id)" >Start Training</button>
+              <p *ngIf="i.status== 'current' && i.status != 'completed'" class="text-muted"> Your training is started </p>
+              <p *ngIf="i.status== 'completed' && i.status != 'current'" class="text-muted"> Your training is completed </p>
               <button *ngIf="i.trainingPaymentStatus == false"   type="button" class="float-right btn btn-sm btn-primary" (click)="payment(i.id)">Payment</button>
           </li>
           <!-- <li *ngFor="let j of paymentData" class="list-group-item">
