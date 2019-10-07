@@ -3,7 +3,7 @@ import { Component, OnInit } from "@angular/core";
 import { ActivatedRoute } from "@angular/router";
 import { AuthService } from "src/app/shared/services/auth.service";
 import * as _ from "underscore";
-
+import * as moment from "moment";
 @Component({
   selector: "app-confirm-request",
   templateUrl: "./confirm-request.component.html",
@@ -15,18 +15,21 @@ export class ConfirmRequestComponent implements OnInit {
   trainerData: any;
   skillData: any;
   skill: any;
-  showRequestedCourse;
-  any;
+  showRequestedCourse:any;
+  userData: any;
 
   timeSlot: string;
   startDate: Date;
   endDate: Date;
-  userName: string;
-  email: string;
-  name: string;
-  fees: string;
-  prerequisites: string;
-  yourName: string;
+
+  checkStartDate: Date;
+  checkEndDate: Date;
+  // userName: string;
+  // email: string;
+  // name: string;
+  // fees: string;
+  // prerequisites: string;
+  // yourName: string;
   request: Boolean;
   requestSent: any;
   lid: any;
@@ -40,6 +43,12 @@ export class ConfirmRequestComponent implements OnInit {
 
     this.lid = +localid;
     console.log(this.lid);
+
+    this.auth.getUserById(this.lid).subscribe(data=>
+      {
+        this.userData = data;
+      });
+
   }
 
   getParamData() {
@@ -71,6 +80,17 @@ export class ConfirmRequestComponent implements OnInit {
   }
 
   onSave() {
+    
+    let checkDate1 = moment(this.startDate).format("DD-MM-YYYY");
+
+    let checkDate2 = moment(this.endDate).format("DD-MM-YYYY");
+
+    if( checkDate1 > checkDate2 )
+    {
+        alert("start date cannot be greater");
+        return false;
+    }
+
     let data = {
       timeSlot: this.timeSlot,
       startDate: this.startDate,
@@ -78,15 +98,18 @@ export class ConfirmRequestComponent implements OnInit {
       fees: this.skillData.fees,
       skillId: this.skillData.id,
       skillname: this.skillData.name,
-      userId: this.lid,
-      userName: this.yourName,
+      userId: this.userData.id,
+      userName: this.userData.userName,
       mentorId: this.trainerData.id,
       mentorName: this.trainerData.userName,
       email: this.trainerData.email,
       accept: false,
       rejectNotify:false,
-      trainingPaymentStatus:false
+      trainingPaymentStatus:false,
+      ratings:0
     };
+
+
 
     console.log(" saving datra " + data);
     this.auth.trainingDetails(data).subscribe(data => {

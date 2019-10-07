@@ -1,7 +1,7 @@
 <div class="container-fluid py-5">
   <div class="row py-5">
     <div class="col-sm-4">
-      <div class="card" style="height:200px auto;">
+      <div  class="card" style="height:200px auto;">
         <div class="card-header">
           Pending
         </div>
@@ -24,7 +24,7 @@
             <p *ngIf="( i.accept == true) && (i.rejectNotify == false)">You requested for {{i.skillname}} under
               {{i.mentorName}} from {{i.startDate  | date: 'dd/MM/yyyy' }} to
               {{i.endDate  | date: 'dd/MM/yyyy'}} on time {{i.timeSlot}} </p>
-              <button *ngIf="i.trainingPaymentStatus == true && i.status != 'current'"  type="button" class="float-left btn btn-sm btn-primary" (click)="startTraining(i.id)" >Start Training</button>
+              <button *ngIf="i.trainingPaymentStatus == true && i.status != 'current' && i.status != 'completed'"  type="button" class="float-left btn btn-sm btn-primary" (click)="startTraining(i.id)" >Start Training</button>
               <p *ngIf="i.status== 'current' && i.status != 'completed'" class="text-muted"> Your training is started </p>
               <p *ngIf="i.status== 'completed' && i.status != 'current'" class="text-muted"> Your training is completed </p>
               <button *ngIf="i.trainingPaymentStatus == false"   type="button" class="float-right btn btn-sm btn-primary" (click)="payment(i.id)">Payment</button>

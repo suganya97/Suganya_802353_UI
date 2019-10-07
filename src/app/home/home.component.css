@@ -1,11 +1,10 @@
+a.nav-link {
+  font-family: Apercu, sans-serif;
+  font-size: 1rem;
+  font-weight: 200;
+  text-transform: none;
+}
 
- a.nav-link {
-    font-family: Apercu,sans-serif;
-    font-size: 1rem;
-    font-weight: 200;
-    text-transform: none;
- } 
- 
 navbar {
   padding: 30px 0;
   height: 92px;
@@ -17,29 +16,26 @@ navbar {
   z-index: 997;
 }
 
-
- a.navbar-brand
- {
-    font-family: Apercu,sans-serif;
-    font-size: 2rem;
-    font-weight: bolder;
-    text-transform: none;
-    color: whitesmoke;
-    text-shadow: 2px 2px 4px #000000;
- }
- .navbar-light .navbar-nav .nav-link {
-    color: whitesmoke;
+a.navbar-brand {
+  font-family: Apercu, sans-serif;
+  font-size: 2rem;
+  font-weight: bolder;
+  text-transform: none;
+  color: whitesmoke;
+  text-shadow: 2px 2px 4px #000000;
 }
- .bg-img {
-   background-image: url("../../assets/img/home1.jpg");
-   min-height: 700px;
-   background-position: center;
-   background-repeat: no-repeat;
-   background-size: cover;
-   position: relative;
- }
+.navbar-light .navbar-nav .nav-link {
+  color: whitesmoke;
+}
+.bg-img {
+  background-image: url("../../assets/img/home1.jpg");
+  min-height: 700px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
 
- 
 #header.header-scrolled {
   background: rgba(0, 0, 0, 0.9);
   padding: 20px 0;
@@ -47,132 +43,262 @@ navbar {
   transition: all 0.5s;
 }
 
-
-
-/*
- ============================== Information =======================
-*/
-
- #information {
-        width: auto;
-        background-color: black;
-    }
-  
-  #information i {
-    color: #18d26e;
-    font-size: 48px;
-    display: inline-block;
-    line-height: 1;
-  }
-  
-  #information h4 a:hover{
-    color: #18d26e;
-  }
-  
-  #information h4 a {
-    color: #fff;
-  } 
-  
-  
-/*
- ============================== Information =======================
-*/
-  #about {
-    background: url("../../assets/img/about-bg.jpg") center top no-repeat fixed;
-    background-size: cover;
-    padding: 60px 0 40px 0;
-    position: relative;
-    opacity: 0.4;
-  }
-  #about-cols 
-  {
-      opacity: 0;
-  }
-
- /* img.rounded:hover
- {
-     width: 91%;
- } */
- h1{
-     font-size: 2.60rem;
-     color:whitesmoke;
-     text-shadow: 4px 4px 6px #000000;
-    font-weight: 900;
-    line-height: 2.2;
- }
- h2{
-    font-size: 2.90rem;
-    font-weight: 800;
-    line-height: 2.2;
+#information {
+  width: auto;
+  background-color: black;
 }
-li
-{
-    list-style-type: none;
-    text-align: left;
-    font-size: 1rem;
+
+#information i {
+  color: #18d26e;
+  font-size: 48px;
+  display: inline-block;
+  line-height: 1;
 }
-h3{ 
-    font-size: 2.80rem;
-    font-weight:700;
-    line-height: 2.2;
+
+#information h4 a:hover {
+  color: #18d26e;
 }
- .bgtext
- {
-     margin-top:200px;
- }
-.text-muted
-{
-    font-size:1.5rem;
+
+#information h4 a {
+  color: #fff;
+}
+
+h1 {
+  font-size: 2.6rem;
+  color: whitesmoke;
+  text-shadow: 4px 4px 6px #000000;
+  font-weight: 900;
+  line-height: 2.2;
+}
+h2 {
+  font-size: 2.9rem;
+  font-weight: 800;
+  line-height: 2.2;
+}
+li {
+  list-style-type: none;
+  text-align: left;
+  font-size: 1rem;
+}
+h3 {
+  font-size: 2.8rem;
+  font-weight: 700;
+  line-height: 2.2;
+}
+.bgtext {
+  margin-top: 200px;
+}
+.text-muted {
+  font-size: 1.5rem;
 }
 
 .btn {
-    -webkit-transition: all .25s ease;
-    transition: all .25s ease;
-    cursor: pointer;
-    padding: 7px 36px;
-    font-size: 16px;
-    line-height: 24px;
-    border-radius: 24px;
+  -webkit-transition: all 0.25s ease;
+  transition: all 0.25s ease;
+  cursor: pointer;
+  padding: 7px 36px;
+  font-size: 16px;
+  line-height: 24px;
+  border-radius: 24px;
 }
-.btn, strong {
-    font-weight: 500;
+.btn,
+strong {
+  font-weight: 500;
 }
 
 .parallax {
-    background-image: url("../../assets/img/training.jpg");
-    min-height: 500px; 
-    background-attachment: fixed;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-  }
+  background-image: url("../../assets/img/training.jpg");
+  min-height: 500px;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
 
- @media only screen and (max-width: 600px) {
+@media only screen and (max-width: 600px) {
+  a.nav-link {
+    font-family: Apercu, sans-serif;
+    font-size: 1rem;
+    font-weight: 50;
+    text-transform: none;
+    color: whitesmoke;
+  }
+  a.navbar-brand {
+    font-family: Apercu, sans-serif;
+    font-size: 1.5rem;
+    font-weight: 100;
+    text-transform: none;
+    color: whitesmoke;
+  }
+  h1 {
+    font-size: 1.8rem;
+    font-weight: 600;
+    line-height: 1.2;
+  }
+  h2 {
+    font-size: 1.75rem;
+    font-weight: 500;
+    line-height: 1.2;
+  }
+}
+
+
+#footer {
+    background: #000;
+    padding: 0 0 30px 0;
+    color: #eee;
+    font-size: 14px;
+  }
   
-    a.nav-link {
-        font-family: Apercu,sans-serif;
-        font-size: 1rem;
-        font-weight: 50;
-        text-transform: none;
-        color: whitesmoke;
-     } 
-     a.navbar-brand
-     {
-        font-family: Apercu,sans-serif;
-        font-size: 1.5rem;
-        font-weight: 100;
-        text-transform: none;
-        color: whitesmoke;
-     }
-     h1{
-        font-size: 1.80rem;
-        font-weight: 600;
-        line-height: 1.2;
-    }
-    h2{
-        font-size: 1.75rem;
-        font-weight: 500;
-        line-height: 1.2;
-        }
+  #footer .footer-top {
+    background: #111;
+    padding: 60px 0 30px 0;
+  }
+  
+  #footer .footer-top .footer-info {
+    margin-bottom: 30px;
+  }
+  
+  #footer .footer-top .footer-info h3 {
+    font-size: 34px;
+    margin: 0 0 20px 0;
+    padding: 2px 0 2px 10px;
+    line-height: 1;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 700;
+    letter-spacing: 3px;
+    border-left: 4px solid #18d26e;
+  }
+  
+  #footer .footer-top .footer-info p {
+    font-size: 14px;
+    line-height: 24px;
+    margin-bottom: 0;
+    font-family: "Montserrat", sans-serif;
+    color: #eee;
+  }
+  
+  #footer .footer-top .social-links a {
+    font-size: 18px;
+    display: inline-block;
+    background: #333;
+    color: #eee;
+    line-height: 1;
+    padding: 8px 0;
+    margin-right: 4px;
+    border-radius: 50%;
+    text-align: center;
+    width: 36px;
+    height: 36px;
+    transition: 0.3s;
+  }
+  
+  #footer .footer-top .social-links a:hover {
+    background: #18d26e;
+    color: #fff;
+  }
+  
+  #footer .footer-top h4 {
+    font-size: 14px;
+    font-weight: bold;
+    color: #fff;
+    text-transform: uppercase;
+    position: relative;
+    padding-bottom: 12px;
+  }
+  
+  #footer .footer-top h4::before,
+  #footer .footer-top h4::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 2px;
+  }
+  
+  #footer .footer-top h4::before {
+    right: 0;
+    background: #555;
+  }
+  
+  #footer .footer-top h4::after {
+    background: #18d26e;
+    width: 60px;
+  }
+  
+  #footer .footer-top .footer-links {
+    margin-bottom: 30px;
+  }
+  
+  #footer .footer-top .footer-links ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  #footer .footer-top .footer-links ul i {
+    padding-right: 8px;
+    color: #ddd;
+  }
+  
+  #footer .footer-top .footer-links ul li {
+    border-bottom: 1px solid #333;
+    padding: 10px 0;
+  }
+  
+  #footer .footer-top .footer-links ul li:first-child {
+    padding-top: 0;
+  }
+  
+  #footer .footer-top .footer-links ul a {
+    color: #eee;
+  }
+  
+  #footer .footer-top .footer-links ul a:hover {
+    color: #18d26e;
+  }
+  
+  #footer .footer-top .footer-contact {
+    margin-bottom: 30px;
+  }
+  
+  #footer .footer-top .footer-contact p {
+    line-height: 26px;
+  }
+  
+  #footer .footer-top .footer-newsletter {
+    margin-bottom: 30px;
+  }
+  
+  #footer .footer-top .footer-newsletter input[type="email"] {
+    border: 0;
+    padding: 6px 8px;
+    width: 65%;
+  }
+  
+  #footer .footer-top .footer-newsletter input[type="submit"] {
+    background: #18d26e;
+    border: 0;
+    width: 35%;
+    padding: 6px 0;
+    text-align: center;
+    color: #fff;
+    transition: 0.3s;
+    cursor: pointer;
+  }
+  
+  #footer .footer-top .footer-newsletter input[type="submit"]:hover {
+    background: #13a456;
+  }
+  
+  #footer .copyright {
+    text-align: center;
+    padding-top: 30px;
+  }
+  
+  #footer .credits {
+    text-align: center;
+    font-size: 13px;
+    color: #ddd;
   }
   

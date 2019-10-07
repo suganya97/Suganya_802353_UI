@@ -38,7 +38,7 @@ export class LoginComponent implements OnInit {
       
       console.log(data1);
         if (data1.userInfo.active === true) {
-        //  this.auth.storeUserData(data1.token, data1.user.userName, data1.user.role);
+        this.auth.storeUserData(data1.userInfo.token, data1.userInfo.email, data1.userInfo.role);
         localStorage.setItem('lid',data1.userInfo.id);
           alert("success");
           if (data1.userInfo.role === 1) {

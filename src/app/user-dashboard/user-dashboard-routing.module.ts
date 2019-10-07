@@ -8,7 +8,6 @@ const routes: Routes = [
     path: '', component: UserDashboardComponent,
     children: [
       { path: 'udashboard', loadChildren: './udashboard/udashboard.module#UdashboardModule' },
-      {path:  'search-trainings', loadChildren: './search-trainings/search-trainings.module#SearchTrainingsModule'},
       { path: 'confirm-request', loadChildren: './confirm-request/confirm-request.module#ConfirmRequestModule' },
       { path: 'completed-trainings', loadChildren: './completed-trainings/completed-trainings.module#CompletedTrainingsModule' },
       { path: 'user-notification',loadChildren:'./user-notification/user-notification.module#UserNotificationModule'},

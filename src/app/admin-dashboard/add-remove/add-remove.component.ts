@@ -48,6 +48,8 @@ export class AddRemoveComponent implements OnInit {
     }
 
     this.auth.addTechnology(this.techAdd.value).subscribe(data => {
+
+      console.log(data);
       this.techInfo = data;
       this.getTechnology();
     });

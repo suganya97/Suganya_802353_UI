@@ -1,20 +1,23 @@
 <section class="my-2 container text-center">
     <div class="row">
-        <div class="col-md-6 offset-md-3">
+        <div class="col-md-12">
             <h3 class="text-center text-capitalize p-4">Payment - Info</h3>
             <table class="table text-center table-striped table-responsive">
                 <tbody id="myTable">
                     <tr>
                         <th>Techonolgy</th>
+                        <th>Payment Status</th>
+                        <th>Tax</th>
                         <th>Fees</th>
                     </tr>
                     <tr *ngFor="let i of paymentSuccess">
                         <td>{{i.skillName}}</td>
-                        <td>{{i.fees}}</td>
+                        <td>Success</td>
+                        <td>Rs. 500(inclusice)</td>
+                        <td>Rs. {{i.fees}}</td>
                     </tr>
                 </tbody>
             </table>
         </div>
     </div>
-
 </section>

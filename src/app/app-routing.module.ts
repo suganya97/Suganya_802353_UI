@@ -5,6 +5,7 @@ import { AppComponent } from './app.component';
 export const routes: Routes = [
    {path:'',redirectTo:'home',pathMatch:'full'},
   { path:'home',loadChildren:'src/app/home/home.module#HomeModule'},
+  {path:  'search-trainings', loadChildren: './search-trainings/search-trainings.module#SearchTrainingsModule'},
   { path:'user-register',loadChildren:'./user-register/user-register.module#UserRegisterModule'},
   { path:'user-dashboard',loadChildren:'./user-dashboard/user-dashboard.module#UserDashboardModule'},
   { path: 'login', loadChildren: './login/login.module#LoginModule' },

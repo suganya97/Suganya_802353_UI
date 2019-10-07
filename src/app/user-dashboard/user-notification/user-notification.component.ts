@@ -2,6 +2,8 @@ import { Component, OnInit } from "@angular/core";
 import { AuthService } from "src/app/shared/services/auth.service";
 import * as _ from "underscore";
 import { Router } from "@angular/router";
+import * as moment from "moment";
+
 @Component({
   selector: "app-user-notification",
   templateUrl: "./user-notification.component.html",
@@ -15,6 +17,10 @@ export class UserNotificationComponent implements OnInit {
   lid: any;
   paymentSuccess: any;
   paymentData: any;
+  compareStartDate: any;
+  compareStartDate1: any;
+  checkStartDate: Date;
+  checkEndDate: Date;
 
   constructor(private auth: AuthService, public router: Router) {}
 
@@ -64,9 +70,40 @@ export class UserNotificationComponent implements OnInit {
   }
 
   startTraining(id) {
-    this.auth.changeTrainingStatus(id).subscribe(data => {
-      console.log(data);
+    this.auth.getTrainingById(id).subscribe(data => {
+      this.compareStartDate1 = data;
+
+      this.checkStartDate = this.compareStartDate1.startDate;
+
+      this.checkEndDate = this.compareStartDate1.endDate;
+
+      let checkDate1 = moment(this.checkStartDate).format("DD-MM-YYYY");
+
+      let checkDate2 = moment(this.checkEndDate).format("DD-MM-YYYY");
+
+      let now = moment().format("DD-MM-YYYY");
+
+      console.log(checkDate1);
+
+      console.log(now);
+
+      if (now > checkDate2) {
+        alert("your request is over");
+      } else {
+        if (checkDate1 <= now) {
+          this.auth.changeTrainingStatus(id).subscribe(data => {
+            console.log(data);
+          });
+          alert("you can start");
+        } else {
+          alert("yet to start");
+        }
+      }
     });
+
+    // this.auth.changeTrainingStatus(id).subscribe(data => {
+    //   console.log(data);
+    // });
   }
 
   payment(id) {

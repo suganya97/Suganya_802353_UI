@@ -69,7 +69,9 @@ export class PaymentComponent implements OnInit {
       fees: this.skillInfo.fees,
       skillName: this.allPaymentData.skillname,
       trainingDetailsId: this.allPaymentData.id,
-      paymentStatus: true
+      paymentStatus: true,
+      commission:0,
+      trainerFees:0
     };
 
     console.log("-=------ ");

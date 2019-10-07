@@ -1,5 +1,4 @@
-import { Component, OnInit } from '@angular/core';
-
+import { Component, OnInit, CUSTOM_ELEMENTS_SCHEMA} from '@angular/core';
 @Component({
   selector: 'app-footer',
   templateUrl: './footer.component.html',
