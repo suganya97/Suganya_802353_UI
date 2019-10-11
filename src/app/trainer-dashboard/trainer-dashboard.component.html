@@ -1,24 +1,32 @@
+<app-trainer-navbar></app-trainer-navbar>
+<nav class="navbar navbar-expand-lg" style="background: #47afdf;">
+    <button class="navbar-toggle navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        More<span class="navbar-toggler-icon icon-bar"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarCollapse">
+        <ul class="nav navbar-nav nav-pills nav-justified w-100">
 
-<app-navbar></app-navbar>
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <div class="navbar-nav text-center m-2 py-3">
-            <div class="row m-2">
-                <div class="col-sm-2 col-sm-2">
-                    <button class="btn btn-start btn-outline-light"><a routerLink="/trainer-dashboard/trainer-payment-information">All Payments
-                        </a></button>
-                </div>
-                <div class="col-sm-2 col-sm-2">
-                    <button class="btn btn-start btn-outline-light"><a routerLink="/trainer-dashboard/trainer-current-trainings">Current
-                            Training</a></button>
-                </div>
-                <div class="col-sm-2 col-sm-2">
-                    <button class="btn btn-start btn-outline-light"><a routerLink="/trainer-dashboard/trainer-completed-trainings">Completed
-                            Trainings</a></button>
-                </div>
-              
-            </div>
-        </div>
-    </nav>
-    <router-outlet></router-outlet>
+            <li class="nav-item">
+                <a routerLink="trainer-current-trainings" class="nav-link"><button class="rounded btn btn-sm">Current
+                        Training</button></a>
+            </li>
+            <li>
+                <a routerLink="trainer-profile" class="nav-link"><button class="rounded btn btn-sm">Trainer Profile</button></a>
+            </li>
+            <li class="nav-item">
+                <a routerLink="trainer-completed-trainings" class="nav-link"><button
+                        class="rounded btn btn-sm">Completed
+                        Trainings</button></a>
+            </li>
+            <li class="nav-item">
+                <a routerLink="trainer-payment-information" class="nav-link"><button
+                        class="rounded btn btn-sm">Payment</button></a>
+            </li>
+        </ul>
+    </div>
+</nav>
 
-    <app-footer></app-footer>
+<router-outlet></router-outlet>
+
+<!-- <app-footer></app-footer> -->

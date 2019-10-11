@@ -10,36 +10,43 @@ import * as _ from "underscore";
 export class CurrentTrainingsComponent implements OnInit {
   curT: any;
   curT1: any;
-  showProgressBar: boolean = false;
-  startProgressBar: boolean = true;
-  progressValue:number;
+  progress:number;
+  model:any;
+  lid: number;
+
   constructor(public auth: AuthService) {}
 
+   
   ngOnInit() {
+    let localid = localStorage.getItem("lid");
+
+    this.lid = +localid;
+    console.log(this.lid);
     this.getCurrentTraining();
-    this.showProgressBar = false;
   }
 
   getCurrentTraining() {
-    this.auth.getAllTrainings().subscribe(data => {
+    this.auth.getAllTraining().subscribe(data => {
       this.curT1 = data;
-      this.curT = _.where(this.curT1, { status: "current" });
+      this.curT = _.where(this.curT1, { status: "current", userId:this.lid });
       console.log(this.curT);
     });
   }
 
-  selectProgress(id) {
-    console.log(this.showProgressBar);
-    console.log(this.startProgressBar);
-    this.showProgressBar = true;
-    this.startProgressBar = false;
+  getProgress(id)
+  {
+    this.auth.getTrainingById(id).subscribe(data => {
+      this.model = data;
+      console.log(this.model);
+    });
+    
   }
-  saveProgress(id) {
-    this.auth.changeProgress(id,this.progressValue).subscribe(data => {
+
+
+  updateProgress(id) {
+    this.auth.updateTrainingProgress(id,this.model.progress).subscribe(data => {
         console.log("updated");
         this.getCurrentTraining();
-        this.showProgressBar = false;
-    this.startProgressBar = true;
     });
 
 

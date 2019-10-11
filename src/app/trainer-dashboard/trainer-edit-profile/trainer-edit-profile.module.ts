@@ -2,13 +2,16 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { TrainerEditProfileRoutingModule } from './trainer-edit-profile-routing.module';
-import { TrainerProfileComponent } from '../trainer-profile/trainer-profile.component';
+import { FormsModule } from '@angular/forms';
+import { TrainerEditProfileComponent } from './trainer-edit-profile.component';
+
 
 
 @NgModule({
-  declarations: [TrainerProfileComponent],
+  declarations: [TrainerEditProfileComponent],
   imports: [
     CommonModule,
+    FormsModule,
     TrainerEditProfileRoutingModule
   ]
 })

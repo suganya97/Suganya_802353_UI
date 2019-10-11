@@ -9,7 +9,7 @@ import { Router } from "@angular/router";
   templateUrl: "./search-trainings.component.html",
   styleUrls: ["./search-trainings.component.css"]
 })
-export class SearchTrainingsComponent implements OnInit {
+export class getSearchDataComponent implements OnInit {
   tech: string;
   skillData: Object;
   allUsers: any;
@@ -22,22 +22,22 @@ export class SearchTrainingsComponent implements OnInit {
   constructor(private auth: AuthService, private router: Router) {}
 
   ngOnInit() {
-    this.getTechnology();
+    this.getAllSkillslogy();
     console.log("get tech");
     this.status1 = false;
     this.status2 = false;
   }
 
-  getTechnology() {
+  getAllSkillslogy() {
     console.log("hello");
-    this.auth.getTechno().subscribe(data => {
+    this.auth.getAllSkills().subscribe(data => {
       this.skillData = data;
     });
   }
 
   onSubmit() {
     console.log(this.tech);
-    this.auth.searchTrainings(this.tech).subscribe(data => {
+    this.auth.getSearchData(this.tech).subscribe(data => {
       this.showSearchData = data;
 
       if (Object.keys(this.showSearchData).length > 0) {

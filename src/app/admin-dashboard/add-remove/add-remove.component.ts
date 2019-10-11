@@ -18,25 +18,26 @@ export class AddRemoveComponent implements OnInit {
     this.techAdd = this.fb.group({
       name: ['', [Validators.required]],
       toc: ['', [Validators.required]],
-      prerequisites: ['', [Validators.required]]
+      prerequisites: ['', [Validators.required]],
+      fees: ['',[Validators.required]]
     });
 
-    this.getTechnology();
+    this.getAllSkillslogy();
   }
 
-  getTechnology() {
+  getAllSkillslogy() {
     console.log("hello")
-    this.auth.getTechno().subscribe(data => {
+    this.auth.getAllSkills().subscribe(data => {
       console.log(data);
       this.skillData = data;
     });
   }
 
   removeTech(id) {
-    this.auth.removingTechnology(id).subscribe(data => {
+    this.auth.DeleteSkillById(id).subscribe(data => {
       this.techInfo = data;
       console.log(data);
-      this.getTechnology();
+      this.getAllSkillslogy();
     })
 
   }
@@ -47,14 +48,11 @@ export class AddRemoveComponent implements OnInit {
       return;
     }
 
-    this.auth.addTechnology(this.techAdd.value).subscribe(data => {
-
+    this.auth.saveSkill(this.techAdd.value).subscribe(data => {
       console.log(data);
       this.techInfo = data;
-      this.getTechnology();
+      this.getAllSkillslogy();
     });
-
-    console.log(this.techInfo)
 
   }
 

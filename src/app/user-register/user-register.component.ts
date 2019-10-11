@@ -4,6 +4,8 @@ import { FormBuilder,  Validators,FormGroup,ReactiveFormsModule } from '@angular
 import { AuthService } from '../shared/services/auth.service';
 import { Router } from '@angular/router';
 
+import {MessageService} from 'primeng/api';
+
 @Component({
   selector: 'app-user-register',
   templateUrl: './user-register.component.html',
@@ -12,7 +14,7 @@ import { Router } from '@angular/router';
 export class UserRegisterComponent implements OnInit {
   UserRegister: FormGroup;
   submitted = false;
-    constructor(private fb: FormBuilder,private auth:AuthService,private router: Router) { }
+    constructor(private fb: FormBuilder,private auth:AuthService,private router: Router,private messageService: MessageService) { }
 
     ngOnInit() {
       this.UserRegister=this.fb.group({
@@ -55,17 +57,30 @@ export class UserRegisterComponent implements OnInit {
         role:3 
     }
 
-    alert(JSON.stringify(this.UserRegister.value));
-    this.auth.registerUser(result).subscribe(data =>
+    this.auth.saveUser(result).subscribe(data =>
     {
-      alert(data);
-      if(data == 'User Registered')
+      if(data.message == "Registered Successfully")
       {
+        console.log(data.message);
+        alert(data.messsage);
+        this.messageService.add({
+          severity: "success",
+          detail: data.message
+        });
+        
         this.router.navigate(['login']);
+        return false;
       }
-      else if( data == 'Email already Exists')
+      else if( data.message == "Email Not Registered")
       {
+
+        this.messageService.add({
+          severity: "error",
+          detail: data.message
+        });
+        
         this.router.navigate(['user-register']);
+        return false;
       }
     });
   }

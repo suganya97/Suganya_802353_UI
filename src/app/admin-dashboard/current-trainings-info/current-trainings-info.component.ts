@@ -16,7 +16,7 @@ export class CurrentTrainingsInfoComponent implements OnInit {
   }
 
   getCurrentTraining() {
-    this.auth.getAllTrainings().subscribe(data => {
+    this.auth.getAllTraining().subscribe(data => {
       this.curT1 = data;
       this.curT = _.where(this.curT1, { status: "current" });
       console.log(this.curT);

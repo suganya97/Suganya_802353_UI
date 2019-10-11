@@ -3,11 +3,10 @@ import { CommonModule } from '@angular/common';
 
 import { TrainerDashboardRoutingModule } from './trainer-dashboard-routing.module';
 import { TrainerDashboardComponent } from './trainer-dashboard.component';
-import { NavbarComponent } from '../navbar/navbar.component';
-import { FooterComponent } from '../footer/footer.component';
+import { TrainerNavbarComponent } from './trainer-navbar/trainer-navbar.component';
 
 @NgModule({
-  declarations: [TrainerDashboardComponent,NavbarComponent,FooterComponent],
+  declarations: [TrainerDashboardComponent, TrainerNavbarComponent],
   imports: [
     CommonModule,
     TrainerDashboardRoutingModule

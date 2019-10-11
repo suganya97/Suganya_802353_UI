@@ -51,12 +51,12 @@ export class TrainerRegisterComponent implements OnInit {
       trainerTechnology: ['', Validators.required]
     });
 
-    this.getTechnology();
+    this.getAllSkillslogy();
   }
 
-  getTechnology() {
+  getAllSkillslogy() {
     console.log("hello");
-    this.auth.getTechno().subscribe(data => {
+    this.auth.getAllSkills().subscribe(data => {
       console.log(data);
       this.skillData = data;
     });
@@ -94,15 +94,21 @@ export class TrainerRegisterComponent implements OnInit {
     };
 
     alert(JSON.stringify(this.TrainerRegister.value));
-    this.auth.registerUser(result).subscribe(data => {
-      alert(data);
-      if (data == "User Registered") {
-         this.router.navigate(["login"]);
-      } else if (data == "Email already Exists") {
-        this.router.navigate(["user-register"]);
-      }
-    });
-  }
+    this.auth.saveUser(result).subscribe(data =>
+      {
+        if(data.message == "Registered Successfully")
+        {
+          alert(data.message);
+          this.router.navigate(['login']);
+        }
+        else if( data.message == "Email Not Registered")
+        {
+          alert(data.message);
+          this.router.navigate(['trainer-register']);
+        }
+      });
+    }
+    
   onReset() {
     this.submitted = false;
     this.TrainerRegister.reset();

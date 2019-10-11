@@ -1,36 +1,36 @@
-<app-navbar></app-navbar>
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <div class="navbar-nav text-center py-3">
-        <div class="row">
-            <div class="col-sm-2 col-sm-2 ">
-                <a routerLink="search-trainings"><button class="btn btn-start btn-outline-light">Search
-                    </button></a>
-            </div>
-            <div class="col-sm-2 col-sm-2 ">
-                <a routerLink="user-notification"><button class="btn btn-start btn-outline-light">Notification
+<app-user-navbar></app-user-navbar>
+
+<nav class="navbar navbar-expand-lg" style="background: rgb(46, 135, 170);">
+    <button class="navbar-toggle navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        More<span class="navbar-toggler-icon icon-bar"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarCollapse">
+        <ul class="nav navbar-nav nav-pills nav-justified w-100">
+
+            <li class="nav-item">
+                <a routerLink="/search-trainings" class="nav-link">
+                    <button class="rounded btn btn-sm">
+                        Search Technology
                     </button>
                 </a>
-            </div>
-            <div class="col-sm-2 col-sm-2 ">
-                <a routerLink="current-trainings"><button class="btn btn-start btn-outline-light">Current
+            </li>
+            <li class="nav-item">
+                <a routerLink="current-trainings" class="nav-link"><button class="rounded btn btn-sm">Current
                         Training</button></a>
-            </div>
-            <div class="col-sm-2 col-sm-2 ">
-                <a routerLink="completed-trainings"><button class="btn btn-start btn-outline-light">Completed
+            </li>
+            <li class="nav-item">
+                <a routerLink="profile" class="nav-link"><button class="rounded btn btn-sm"> Profile </button></a>
+            </li>
+            <li class="nav-item">
+                <a routerLink="completed-trainings" class="nav-link"><button class="rounded btn btn-sm">Completed
                         Trainings</button></a>
-            </div>
-            <div class="col-sm-2 col-sm-2 ">
-                <a routerLink="payment"><button class="btn btn-start btn-outline-light">Payment</button></a>
-            </div>
-            <div class="col-sm-2 col-sm-2 ">
-                <a routerLink="payment-info"><button class="btn btn-start btn-outline-light">Receipt</button></a>
-            </div>
-        </div>
+            </li>
+            <li class="nav-item">
+                <a routerLink="payment-info" class="nav-link"><button class="rounded btn btn-sm">Receipt</button></a>
+            </li>
+        </ul>
     </div>
 </nav>
-<div class="my-5"></div>
+
 <router-outlet></router-outlet>
-<div class="my-5">
-    
-    </div>
-<app-footer></app-footer>

@@ -1,7 +1,10 @@
+
+  
 import { Component, OnInit } from "@angular/core";
 import { AuthService } from "src/app/shared/services/auth.service";
 import * as _ from "underscore";
 import { Router, RouterModule, ActivatedRoute } from "@angular/router";
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 
 @Component({
   selector: "app-payment",
@@ -15,17 +18,27 @@ export class PaymentComponent implements OnInit {
   userInfo: any;
   skillInfo: any;
   savedPaymentSuccess: any;
+  PaymentForm : FormGroup;
+
 
   constructor(
     private auth: AuthService,
     public router: Router,
-    private route: ActivatedRoute
+    private route: ActivatedRoute, 
+    private fb: FormBuilder
   ) {}
 
   ngOnInit() {
     let localid = localStorage.getItem("lid");
     this.lid = +localid;
     this.getParamData();
+    this.PaymentForm = this.fb.group({
+      Name:['',[Validators.required]],
+      Card:['',[Validators.required]],
+      mm:['',[Validators.required]],
+      yy:['',[Validators.required]],
+      cv:['',[Validators.required]]
+   });
   }
 
   getParamData() {
@@ -74,16 +87,14 @@ export class PaymentComponent implements OnInit {
       trainerFees:0
     };
 
-    console.log("-=------ ");
     console.log(data);
 
     this.auth.savePayment(data).subscribe(data => {
       this.savedPaymentSuccess = data;
-
       console.log(this.savedPaymentSuccess);
       console.log(this.savedPaymentSuccess);
       let id = this.savedPaymentSuccess.trainingDetailsId;
-      this.auth.changeTrainingPaymentStatus(id).subscribe(data => {
+      this.auth.updateTrainingAndPaymentStatusById(id).subscribe(data => {
         this.router.navigate(["user-dashboard/payment-info"]);
       });
     });

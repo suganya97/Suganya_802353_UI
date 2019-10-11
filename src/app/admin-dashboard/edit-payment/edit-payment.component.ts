@@ -10,7 +10,7 @@ import { AuthService } from "src/app/shared/services/auth.service";
   styleUrls: ["./edit-payment.component.css"]
 })
 export class EditPaymentComponent implements OnInit {
-  model: object = Object;
+  model: any;
   id: number;
 
   constructor(
@@ -38,7 +38,14 @@ export class EditPaymentComponent implements OnInit {
   }
 
   updatingPaymentAndCommision() {
-    this.auth.updatePaymentAndCommision(this.id, this.model).subscribe(() => {
+
+    if( (this.model.commision + this.model.trainerFees) == this.model.fees )
+    {
+      alert("enter valid amount");
+      return false;
+    }
+
+    this.auth.updatePaymentAndCommisionById(this.id, this.model).subscribe(() => {
       this.goBack();
     });
   }

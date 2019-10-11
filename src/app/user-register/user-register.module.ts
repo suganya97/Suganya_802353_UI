@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule,CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { UserRegisterRoutingModule } from './user-register-routing.module';
@@ -15,6 +15,7 @@ import { FormsModule,ReactiveFormsModule } from '@angular/forms';
     FormsModule,
     ReactiveFormsModule,
     UserRegisterRoutingModule
-  ]
+  ],
+  schemas:[CUSTOM_ELEMENTS_SCHEMA]
 })
 export class UserRegisterModule { }

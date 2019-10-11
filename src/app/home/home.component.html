@@ -1,145 +1,133 @@
-<section>
-  <div class="bg-img" id="header">
-    <nav class="navbar navbar-expand-lg navbar-light sticky-top">
-      <a class="navbar-brand ml-3" routerLinkActive="true" routerLink="/">Mentor On Demand</a>
+<nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top">
+  <a class="navbar-brand" href="#"><h1 style="text-shadow: 2px 2px 2px 2px skyblue;font-weight:bold;color:rebeccapurple;">EduNet</h1></a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto"></ul>
+    <form class="form-inline my-2 my-lg-0">
+      <ul class="navbar-nav">
+        <li class="nav-item active">
+          <a class="nav-link" href="#">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#about">About Us</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="false">
+            Login As
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+            <a class="dropdown-item" routerLink="/login">User</a>
+            <a class="dropdown-item" routerLink="/login">Mentor</a>
+            <a class="dropdown-item" routerLink="/login">Admin</a>
+          </div>
+        </li>
+        
+      </ul>
+    </form>
+  </div>
+</nav>
+<!--==========================
+      Intro Section
+    ============================-->
+<section id="intro" class="clearfix">
+  <div class="container d-flex h-100">
+    <div class="row justify-content-center align-self-center">
+      <div class="col-md-6 intro-info order-md-first order-last">
+        <h2>Wanna Learn<br>using the network??<span style="text-shadow: 3px 3px 3px rgb(17, 17, 77)">Then you have got a great platform..</span></h2>
+        <div>
+          <a class="btn-get-started scrollto" routerLink="/user-register" style="background-color: crimson">User-Register</a>&nbsp;&nbsp;&nbsp;
+          <a class="btn-get-started scrollto" routerLink="/trainer-register" style="background-color: crimson">Mentor-Register</a>&nbsp;&nbsp;&nbsp;
 
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav mr-auto">
-          <!-- <li class="nav-item active">
-              <a class="nav-link" routerLink="/" routerLinkActive="true">Home <span class="sr-only">(current)</span></a>
-            </li> -->
-        </ul>
-        <ul class="navbar-nav ml-auto">
-          <li class="nav-item dropdown">
-            <a class="nav-link btn-md btn btn-info dropdown-toggle  text-center mx-1" href="#" id="navbarDropdown"
-              role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="width:130px;">
-              Register
-            </a>
-            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <a class="dropdown-item" routerLink="/user-register" routerLinkActive="true">User</a>
-              <a class="dropdown-item" routerLink="/trainer-register" routerLinkActive="true">Trainer</a>
-            </div>
-          </li>
-          <li>
-            <a class="nav-link btn btn-md btn-info text-center" routerLink="/login" routerLinkActive="true"
-              style="width:130px;">Login</a>
-          </li>
-        </ul>
-        <!-- <a class="nav-link" routerLink="/login" routerLinkActive="true"
-                    class="btn btn-info btn-md text-white text-center mx-1" style="width:130px;">Login</a>
-                <a class="nav-link" routerLink="/register" routerLinkActive="true"
-                    class="btn btn-info btn-md text-white text-center" style="width:130px;">Register</a> -->
+        </div>
       </div>
-    </nav>
-    <div class="text-center bgtext">
-      <h1>We train you to build your skills and develop your future </h1>
 
-
-        <button class="btn btn-info btn-md text-white my-1" (click)="navToSearch()">Get Started</button>
-   
-      <br>
-      <!-- <button class="btn btn-success btn-md text-white my-5" (click)="navToRegister();">GET STARTED</button> -->
     </div>
+
   </div>
 </section>
+<main id="main">
 
+ 
+  <section id="about">
 
-
-
-<section id="information">
-  <div class="container py-5">
-    <div class="row text-center">
-      <div class="col-md-6 col-sm-6">
-        <i class="fa fa-users" aria-hidden="true"></i>
-        <h4 class="title my-2 py-1"><a routerLink="/user-register">Users</a></h4>
-        <p class="text-white my-1"> User start your carrier with new technologies </p>
-      </div>
-      <div class="col-md-6 col-sm-6">
-        <i class="fa fa-users" aria-hidden="true"></i>
-        <h4 class="title my-2 py-1"><a routerLink="/trainer-register">Trainers</a></h4>
-        <p class="text-white my-2"> Mentor gain more experience by training in new technologies </p>
-      </div>
-    </div>
-  </div>
-</section>
-
-
-<section>
-  <div class="container-fluid ">
-    <div class="text-center shadow-lg my-5 mb-5 p-4">
-      <h2>Grow your learning</h2>
-      <h2>with advice from vetted growth mentors</h2>
-      <p class="text-muted my-5 p-4">Receive a world class <strong>EDUCATION</strong> here </p>
-    </div>
-  </div>
-</section>
-
-<section>
-  <div class="parallax"></div>
-</section>
-
-<footer id="footer">
-  <div class="footer-top">
     <div class="container">
       <div class="row">
 
-        <div class="col-lg-3 col-md-6 footer-info">
-          <h3 style="font-size: 16px">Mentor On Demand</h3>
-          <hr>
-          <div class="container">
-            <img src="../../assets/home.jpg" width="90%" />
+        <div class="col-lg-5 col-md-6">
+          <div class="about-img">
+            <img src="../assets/about-img.jpg" alt="">
           </div>
         </div>
 
-        <div class="col-lg-3 col-md-6 footer-links">
-          <h4>Useful Links</h4>
-          <ul>
-            <li><i class="ion-ios-arrow-right"></i> <a routerLink="/">Home</a></li>
-            <li><i class="ion-ios-arrow-right"></i> <a routerLink="/login">Login</a></li>
-            <li><i class="ion-ios-arrow-right"></i> <a routerLink="/register">User Registeration</a></li>
-            <li><i class="ion-ios-arrow-right"></i> <a routerLink="/tregister">Trainer Registeration</a></li>
-            <li><i class="ion-ios-arrow-right"></i> <a routerLink="/contactus">Contact us</a></li>
-            <li><i class="ion-ios-arrow-right"></i> <a routerLink="/aboutus">About us</a></li>
-          </ul>
-        </div>
+        <div class="col-lg-7 col-md-6">
+          <div class="about-content">
+            <h2>About Us</h2>
+            <h3>Enjoy learning and become an expert!!</h3>
+            <p>We give online training and learning management software which makes an impact,
+              whether that change individual behaviour or upskilling a workforce of thousands.</p>
+            <p>This new website works with an updated version of our Enable Learning Management System (LMS) - giving
+              you a better experience when you take your training or give courses to other learners.
 
-        <div class="col-lg-3 col-md-6 footer-contact">
-          <h4>Contact Us</h4>
-          <p>
-            <i class="fas fa-home mr-3 "></i> Perungudi, Chennai<br>
-            <i class="fas fa-phone mr-3"></i> 18009724653<br>
-            <i class="fas fa-envelope mr-3"></i> mentorondemand@gmail.com<br>
-          </p>
+              If you’ve bought from us in the past and want to access previous training, you can still login via the
+              login button at the top of the website. 
 
-          <div class="social-links">
-            <a routerLink="/" class="twitter"><i class="fa fa-twitter"></i></a>
-            <a routerLink="/" class="facebook"><i class="fa fa-facebook"></i></a>
-            <a routerLink="/" class="instagram"><i class="fa fa-instagram"></i></a>
-            <a routerLink="/" class="google-plus"><i class="fa fa-google-plus"></i></a>
-            <a routerLink="/" class="linkedin"><i class="fa fa-linkedin"></i></a>
+              Please bear with us through the transition. </p>
+            <ul>
+              <li><i class="ion-android-checkmark-circle"></i>Limited Seats
+              </li>
+              <li><i class="ion-android-checkmark-circle"></i> Exclusive teaching
+                </li>
+              <li><i class="ion-android-checkmark-circle"></i>Great materials</li>
+            </ul>
           </div>
-
         </div>
+      </div>
+    </div>
 
-        <div class="col-lg-3 col-md-6 footer-newsletter">
-          <h4>Our Newsletter</h4>
-          <p>Subscribe to get information about new trainings & technologies and get hands on experience.</p>
-          <form action="" method="post">
-            <input type="email" name="email"><input type="submit" value="Subscribe">
-          </form>
+  </section>
+
+</main>
+
+<footer id="footer" class="section-bg">
+  <div class="footer-top">
+    <div class="container">
+
+      <div class="row">
+
+        <div class="col-lg-6">
+
+          <div class="row">
+
+            <div class="col-sm-6">
+
+              <div class="footer-links">
+                <h2>Contact Us</h2>
+                <p>
+                  A108 Perungudi <br>
+                 Chennai, 600002<br>
+                  India <br>
+                  <strong>Phone:</strong> +9090909090<br>
+                  <strong>Email:</strong> edunet@example.com<br>
+                </p>
+              </div>
+            </div>
+          </div>
         </div>
-
       </div>
     </div>
   </div>
-
   <div class="container">
     <div class="copyright">
-      &copy; Copyright <strong>Mentor On Demand</strong>. All Rights Reserved
+      &copy; Copyright <strong>Cognizant</strong>. All Rights Reserved
+    </div>
+    <div class="credits">
+
     </div>
   </div>
 </footer>
+
+<a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>

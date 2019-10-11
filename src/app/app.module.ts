@@ -6,9 +6,12 @@ import { CommonModule } from '@angular/common';
 import { AppRoutingModule } from './app-routing.module';
 import { AuthService } from './shared/services/auth.service';
 import { HttpClientModule } from '@angular/common/http';
+import { FooterComponent } from './footer/footer.component';
+import {MessageService} from 'primeng/api';
+
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,FooterComponent
   ],
   imports: [
     CommonModule,
@@ -17,7 +20,7 @@ import { HttpClientModule } from '@angular/common/http';
     AppRoutingModule,
     BrowserAnimationsModule
   ],
-  providers: [AuthService],
+  providers: [AuthService,MessageService],
   bootstrap: [AppComponent],
   schemas: [ CUSTOM_ELEMENTS_SCHEMA ]
 })

@@ -2,7 +2,7 @@
     <div class="row py-5">
         <div class="col-sm-4">
             <div class="card" style="height:200px auto;">
-                <div class="card-header">
+                <div class="card-header text-center text-white bg-info">
                     Pending
                 </div>
                 <ul  *ngFor="let i of pendingApproval" class="list-group list-group-flush">
@@ -20,12 +20,13 @@
         </div>
         <div class="col-sm-4">
             <div *ngIf="acceptedTrainings" class="card" style="height:200px auto;">
-                <div class="card-header">
+                <div class="card-header text-center text-white bg-success">
                     Accepted
                 </div>
                 <ul class="list-group list-group-flush">
                     <li *ngFor="let i of acceptedTrainings" class="list-group-item">
-                        <p *ngIf="( i.accept == true) && (i.rejectNotify == false)">{{i.userName}} requested for
+                        <p *ngIf="( i.accept == true) && (i.rejectNotify == false)">you accepted the request of
+                            {{i.userName}} for
                             {{i.skillname}} from {{i.startDate  | date: 'dd/MM/yyyy' }} to
                             {{i.endDate  | date: 'dd/MM/yyyy'}} on time {{i.timeSlot}} </p>
                     </li>
@@ -34,7 +35,7 @@
         </div>
         <div class="col-sm-4">
             <div class="card" style="height:200px auto;">
-                <div class="card-header">
+                <div class="card-header text-center text-white bg-danger">
                     Rejected Request
                 </div>
                 <ul class="list-group list-group-flush">

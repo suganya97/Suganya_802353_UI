@@ -26,7 +26,7 @@ export class TrainerNotificationComponent implements OnInit {
 
   getRequestStatus() {
     console.log("in status");
-    this.auth.getAllTrainings().subscribe(data => {
+    this.auth.getAllTraining().subscribe(data => {
       console.log(data);
       this.allData = data;
       this.pendingApproval = _.where(this.allData, {
@@ -52,7 +52,7 @@ export class TrainerNotificationComponent implements OnInit {
   }
 
   acceptInvite(id) {
-    this.auth.acceptStatus(id).subscribe(data => {
+    this.auth.acceptTrainingRequestById(id).subscribe(data => {
       console.log(data);
       alert("accepted");
 
@@ -60,7 +60,7 @@ export class TrainerNotificationComponent implements OnInit {
     });
   }
   rejectInvite(id) {
-    this.auth.rejectStatus(id).subscribe(data => {
+    this.auth.rejectTrainingRequestById(id).subscribe(data => {
       console.log(data);
       alert("rejected");
       this.getRequestStatus();

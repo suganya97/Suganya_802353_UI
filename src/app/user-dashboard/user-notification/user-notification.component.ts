@@ -41,7 +41,7 @@ export class UserNotificationComponent implements OnInit {
 
   getRequestStatus() {
     console.log("in status");
-    this.auth.getAllTrainings().subscribe(data => {
+    this.auth.getAllTraining().subscribe(data => {
       this.allData = data;
       this.pendingRequest = _.where(this.allData, {
         rejectNotify: false,
@@ -91,7 +91,7 @@ export class UserNotificationComponent implements OnInit {
         alert("your request is over");
       } else {
         if (checkDate1 <= now) {
-          this.auth.changeTrainingStatus(id).subscribe(data => {
+          this.auth.updateTrainingStatusById(id).subscribe(data => {
             console.log(data);
           });
           alert("you can start");

@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { AdminNotificationComponent } from './admin-notification.component';
+import { AdminNavbarComponent } from './admin-navbar.component';
 
-describe('AdminNotificationComponent', () => {
-  let component: AdminNotificationComponent;
-  let fixture: ComponentFixture<AdminNotificationComponent>;
+describe('AdminNavbarComponent', () => {
+  let component: AdminNavbarComponent;
+  let fixture: ComponentFixture<AdminNavbarComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ AdminNotificationComponent ]
+      declarations: [ AdminNavbarComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(AdminNotificationComponent);
+    fixture = TestBed.createComponent(AdminNavbarComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

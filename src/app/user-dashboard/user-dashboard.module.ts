@@ -2,12 +2,11 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { UserDashboardRoutingModule } from './user-dashboard-routing.module';
 import { UserDashboardComponent } from './user-dashboard.component';
-import { NavbarComponent } from '../navbar/navbar.component';
-import { FooterComponent } from '../footer/footer.component';
+import { UserNavbarComponent } from './user-navbar/user-navbar.component';
 
 
 @NgModule({
-  declarations: [UserDashboardComponent,NavbarComponent,FooterComponent],
+  declarations: [UserDashboardComponent, UserNavbarComponent],
   imports: [
     CommonModule,
     UserDashboardRoutingModule

@@ -1,0 +1,14 @@
+.container-fluid {
+    background-image:url("../../assets/home10.jpg");
+    width: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 750px;
+    margin: -2px;
+}
+
+.search
+{
+    color: rgb(180, 255, 242);
+}
